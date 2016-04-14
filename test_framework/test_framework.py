@@ -1,12 +1,13 @@
 import sys
 from datetime import datetime
 
+
 class Test(object):
     """
     Implements the test interface as described here:
     http://www.codewars.com/docs/python-test-reference-1
     """
-    
+
     def __init__(self):
         self.desc = "Undefined"
         self.it = "Undefined"
@@ -63,11 +64,13 @@ class Test(object):
         print "Total:  {}".format(self.successes + self.failures)
 
         delta = end - self.start
-        print "Process took {:,}ms to complete".format((delta.microseconds + 1000000 * delta.seconds) // 1000)
+        print "Process took {:,}ms to complete".format(
+            (delta.microseconds + 1000000 * delta.seconds) // 1000)
         if self.failures == 0:
             print "Happy Days!"
         else:
             print "Better luck next time!"
 
+
 test = Test()
-sys.exitfunc=test.report
+sys.exitfunc = test.report
